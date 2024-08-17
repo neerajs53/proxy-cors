@@ -1,12 +1,17 @@
 import axios from 'axios';
-import cors from 'cors';
-
-const corsHandler = cors({
-  origin: '*', // Allows all origins. For better security, specify allowed origins.
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
-});
 
 export default async function handler(req, res) {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Change '*' to your specific domain
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+  if (req.method === 'OPTIONS') {
+    // Handle preflight request
+    res.status(200).end();
+    return;
+  }
+
   try {
     const response = await axios.get('https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.1767&lng=78.0081&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING', {
       headers: {
