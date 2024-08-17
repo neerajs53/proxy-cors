@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
-  const { id } = req.query;
+  const  id  = req.parmas.id;
   try {
     const response = await axios.get(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=27.1767&lng=78.0081&restaurantId=${id}`, {
       headers: {
