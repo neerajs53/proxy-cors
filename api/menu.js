@@ -1,4 +1,10 @@
 import axios from 'axios';
+import cors from 'cors';
+
+const corsHandler = cors({
+  origin: '*', // Allows all origins. For better security, specify allowed origins.
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+});
 
 export default async function handler(req, res) {
   const { id } = req.query;
