@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await axios.get('https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.1767&lng=78.0081&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING', {
+    const response = await axios.get('https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7041&lng=77.1025&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING', {
       headers: {
         'User-Agent': 'Mozilla/5.0',
         'Accept': 'application/json',
