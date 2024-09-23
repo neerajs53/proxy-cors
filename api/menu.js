@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   const id = req.query.id;
 
   try {
-    const response = await axios.get(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=27.1767&lng=78.0081&restaurantId=${id}`, {
+    const response = await axios.get(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7041&lng=77.1025&restaurantId=${id}`, {
       headers: {
         'User-Agent': 'Mozilla/5.0',
         'Accept': 'application/json',
